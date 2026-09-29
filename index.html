@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050913">
-  <meta name="description" content="Portofolio 3D interaktif Gilang Nur Maulida Faid.">
-  <title>Portfolio Interface</title>
+  <meta name="description" content="Gerbang digital Gilang Nur Maulida Faid — satu tempat untuk menjelajahi semua karya dan proyeknya.">
+  <title>Gilang's Digital Gateway</title>
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050913'/%3E%3Ctext x='50' y='67' font-size='48' text-anchor='middle' fill='%235ff9e5' font-family='monospace'%3EGF%3C/text%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050913'/%3E%3Ctext x='50' y='68' font-size='48' text-anchor='middle' fill='%235ff9e5' font-family='monospace'%3EGF%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -18,125 +18,74 @@
 </head>
 
 <body>
-  <div class="app" id="app">
+  <div class="loading-screen" id="loadingScreen" role="status" aria-live="polite">
+    <div class="loading-content">
+      <div class="loader-orbit" aria-hidden="true"><i></i><span></span><b></b></div>
+      <p class="loading-kicker">ESTABLISHING CONNECTION</p>
+      <h1>Opening the <em>gateway</em></h1>
+      <div class="loader-progress" aria-hidden="true"><i></i></div>
+      <p class="loading-status">MAPPING DIGITAL SPACE <span>06 SEC</span></p>
+    </div>
+  </div>
+
+  <div class="app">
     <div class="space-backdrop" aria-hidden="true">
       <div class="nebula nebula--one"></div>
       <div class="nebula nebula--two"></div>
-      <div class="space-events" id="spaceEvents"></div>
+      <div class="star-glow"></div>
       <div class="scanlines"></div>
     </div>
 
-    <header class="topbar">
-      <a class="brand" href="#profile" data-section="profile" aria-label="Kembali ke profil">
-        <span class="brand-mark">GF</span>
-        <span class="brand-copy"><strong id="brandName">PORTFOLIO</strong><small>NEURAL / INTERFACE</small></span>
-      </a>
-      <div class="topbar-meta">
-        <span class="signal"><i></i><span id="connectionText">LINK STABLE</span></span>
-        <span class="clock" id="clock">00:00:00</span>
+    <main class="gateway" aria-labelledby="gatewayTitle">
+      <div class="gateway-meta">
+        <a class="brand" href="./" aria-label="Gilang's Digital Gateway">
+          <span class="brand-mark" aria-hidden="true">GF</span>
+          <span class="brand-copy"><strong>GILANG'S UNIVERSE</strong><small>DIGITAL WORKS / 2026</small></span>
+        </a>
+        <span class="system-status"><i></i><span id="systemStatus">GATEWAY ONLINE</span></span>
       </div>
-      <button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="mobileNav">
-        <span>MENU</span><i aria-hidden="true"><b></b><b></b><b></b></i>
-      </button>
-    </header>
 
-    <main>
-      <section class="welcome-screen" id="welcome" aria-labelledby="welcomeTitle">
-        <div class="welcome-grid" aria-hidden="true"></div>
-        <div class="welcome-content">
-          <p class="kicker"><span class="kicker-line"></span>INITIALIZING DIGITAL SPACE</p>
-          <h1 id="welcomeTitle">Welcome to<br><em>Gilang's Interface.</em></h1>
-          <p class="welcome-copy">A living portfolio built from code, curiosity, and the will to keep building.</p>
-          <a class="welcome-enter" href="#core">ENTER THE CORE <span>↓</span></a>
+      <section class="hero-copy">
+        <p class="eyebrow"><span></span> YOUR PORTAL TO MY WORK</p>
+        <h1 id="gatewayTitle">Gilang's<br><em>Digital Gateway.</em></h1>
+        <p class="hero-description" id="gatewayDescription">Satu ruang untuk menjelajahi semua karya, eksperimen, dan proyek digital yang kubangun.</p>
+        <p class="hero-location" id="profileLocation">PONOROGO, JAWA TIMUR <span>—</span> INDONESIA</p>
+      </section>
+
+      <section class="gateway-scene" aria-label="Gerbang galaksi 3D interaktif">
+        <div class="scene-label scene-label--top"><span class="crosshair"></span> PORTAL / 01</div>
+        <div class="scene-label scene-label--bottom">DRAG TO ROTATE <span></span></div>
+        <div class="canvas-wrap" id="canvasWrap">
+          <canvas id="sceneCanvas" aria-label="Bola gerbang galaksi 3D yang dapat diputar dengan mouse atau sentuhan"></canvas>
+          <div class="canvas-vignette" aria-hidden="true"></div>
         </div>
-        <div class="welcome-meta"><span>SYS.ID / GF-01</span><span>SCROLL TO INITIALIZE</span></div>
+        <div class="portal-caption" aria-hidden="true"><span>INTERACTIVE SPACE</span><i></i><span>SELECT A DESTINATION</span></div>
       </section>
 
-      <section class="experience" id="core" aria-label="Interactive 3D portfolio">
-        <section class="intro" aria-labelledby="heroTitle">
-          <p class="kicker"><span class="kicker-line"></span>PERSONAL DIGITAL SPACE</p>
-          <h1 id="heroTitle">Build ideas.<br><em>Break limits.</em></h1>
-          <p class="intro-copy" id="heroCopy">Interactive portfolio of a software student exploring frontend craft and
-            cybersecurity.</p>
-          <div class="intro-actions">
-            <button class="primary-action" type="button" data-section="projects">EXPLORE WORK <span>↗</span></button>
-            <button class="quiet-action" type="button" data-section="contact">OPEN CHANNEL</button>
-          </div>
-        </section>
+      <nav class="destination-nav" id="destinationNav" aria-label="Tautan ke proyek dan website">
+        <p class="destination-heading"><span>SELECT DESTINATION</span><span id="destinationCount">03 CONNECTIONS</span></p>
+        <div class="destination-list" id="destinationList"></div>
+      </nav>
 
-        <section class="orbital-stage" aria-label="Interactive 3D portfolio scene">
-          <div class="stage-label stage-label--top"><span class="crosshair"></span>CORE / 01</div>
-          <div class="stage-label stage-label--bottom">DRAG TO ROTATE <span class="line"></span></div>
-          <div class="ai-status" aria-live="polite">
-            <span class="status-pulse"></span>
-            <span class="status-label">AI STATUS</span>
-            <strong id="aiStatus">READY</strong>
-          </div>
-          <div class="core-message" id="coreMessage" role="status" aria-live="polite"></div>
-          <div class="canvas-wrap" id="canvasWrap">
-            <canvas id="sceneCanvas" aria-label="Rotating holographic code sphere and futuristic computer"></canvas>
-            <div class="canvas-vignette" aria-hidden="true"></div>
-          </div>
-          <div class="orbit-nav" id="orbitNav" aria-label="Portfolio sections">
-            <span class="orbit-nav-title">SELECT MODULE</span>
-            <span class="orbit-nav-subtitle">CLICK TO CONNECT</span>
-          </div>
-        </section>
-
-        <aside class="side-readout" aria-label="System readout">
-          <div class="readout-heading"><span>LIVE READOUT</span><i></i></div>
-          <dl>
-            <div>
-              <dt>MODE</dt>
-              <dd id="readoutMode">CREATIVE</dd>
-            </div>
-            <div>
-              <dt>STACK</dt>
-              <dd>WEB / 3D / UI</dd>
-            </div>
-            <div>
-              <dt>LOCATION</dt>
-              <dd id="readoutLocation">PONOROGO, ID</dd>
-            </div>
-          </dl>
-          <div class="readout-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        </aside>
-      </section>
+      <footer class="gateway-footer">
+        <span>AN OPEN DOOR TO WHAT I'VE BUILT</span>
+        <span>EST. <b>2026</b> <i aria-hidden="true">✦</i></span>
+      </footer>
     </main>
-
-    <div class="mobile-nav" id="mobileNav" aria-label="Portfolio sections">
-      <div class="mobile-nav-head"><span>SELECT MODULE</span><button type="button" id="mobileNavClose"
-          aria-label="Tutup menu">×</button></div>
-      <div class="mobile-nav-grid" id="mobileNavGrid"></div>
-    </div>
-
-    <section class="content-panel" id="contentPanel" aria-labelledby="panelTitle" aria-hidden="true">
-      <div class="panel-backdrop" data-close-panel="true"></div>
-      <div class="panel-card">
-        <div class="panel-topline"><span id="panelIndex">01 / 06</span><button type="button" id="panelClose"
-            aria-label="Tutup panel">×</button></div>
-        <div class="panel-heading">
-          <p class="kicker"><span class="kicker-line"></span><span id="panelKicker">PROFILE MODULE</span></p>
-          <h2 id="panelTitle">Profile</h2>
-        </div>
-        <div class="panel-content" id="panelContent"></div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <span id="footerText">© 2026 — DIGITAL PORTFOLIO</span>
-      <span class="footer-code">SYS.ID <b>///</b> 0xGF</span>
-    </footer>
   </div>
 
   <noscript>
-    <div class="no-script">JavaScript diperlukan untuk menjalankan interface portfolio 3D ini. Silakan aktifkan
-      JavaScript di browser Anda.</div>
+    <div class="no-script">
+      JavaScript perlu diaktifkan untuk animasi gerbang 3D. Kunjungi langsung:
+      <a href="https://gilangfaid.vercel.app/">Portfolio</a>,
+      <a href="https://11rplsterida.vercel.app/">website kelas</a>, atau
+      <a href="https://download-landing-page.vercel.app/">aplikasi Flutter</a>.
+    </div>
   </noscript>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 
 </html>
