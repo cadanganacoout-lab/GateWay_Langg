@@ -1,29 +1,31 @@
-# Gilang's Digital Gateway
+# GF Portals
 
-Gilang's Digital Gateway adalah landing page statis yang menjadi portal ke karya dan proyek digital Gilang Nur Maulida Faid. Desain bertema galaksi menempatkan gerbang 3D interaktif sebagai fokus visual, dengan tautan proyek yang bisa dibuka langsung dari halaman.
-
-## Fitur
-
-- Scene 3D berisi gerbang bercahaya, bintang, partikel, dan objek yang mengorbit.
-- Gerbang dapat diputar dengan menyeret menggunakan mouse atau sentuhan.
-- Daftar tujuan dibuat dari data, sehingga label dan tautannya mudah diperbarui.
-- Tautan tujuan dibuka di tab baru; URL dibatasi ke protokol HTTP dan HTTPS.
-- Jika Three.js atau WebGL tidak tersedia, halaman menampilkan tampilan alternatif dan tautan tetap dapat digunakan.
-- Tata letak menyesuaikan ukuran layar dan menghormati preferensi `prefers-reduced-motion`.
+Landing page statis untuk menjelajahi karya dan proyek digital Gilang. Website dibuat dengan Vite, React, TypeScript, dan Tailwind CSS; tidak menggunakan backend, API, atau konten 3D.
 
 ## Menjalankan secara lokal
 
-Buka `index.html` di browser modern. Tidak ada proses build atau instalasi dependency. Koneksi internet diperlukan untuk memuat Three.js dan font dari CDN; tanpa koneksi, halaman tetap dapat menampilkan tautan proyek, tetapi scene 3D dan font eksternal mungkin tidak tersedia.
+```bash
+npm install
+npm run dev
+```
+
+Untuk memeriksa build produksi:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploy ke Vercel
+
+Impor repository ke Vercel, pilih preset **Vite**, lalu gunakan `npm run build` sebagai build command dan `dist` sebagai output directory. Tidak diperlukan environment variable atau backend.
 
 ## Mengubah konten
 
-Edit `js/data.js` untuk memperbarui judul dan deskripsi halaman, lokasi profil, atau daftar tujuan. Setiap tujuan menggunakan `id`, `label`, `url`, `description`, dan `color`. Tautan yang ditampilkan saat JavaScript tidak aktif juga tersedia di bagian `<noscript>` pada `index.html`.
+- **Teks tujuan, deskripsi, dan URL:** array `destinations` di `src/App.tsx`.
+- **Nama, tagline, lokasi, hero, dan footer:** markup utama di `src/App.tsx`.
+- **Warna, font, responsivitas, dan animasi:** custom properties serta aturan CSS di `src/index.css`.
+- **Judul tab, SEO, Open Graph, dan fallback tanpa JavaScript:** `index.html`.
+- **Ikon tab:** `favicon.svg`.
 
-## Struktur berkas
-
-| Berkas | Kegunaan |
-| --- | --- |
-| `index.html` | Struktur halaman, metadata, dan pemuatan stylesheet serta skrip |
-| `css/style.css` | Tampilan visual, tata letak responsif, dan animasi antarmuka |
-| `js/data.js` | Konten profil dan daftar tautan tujuan |
-| `js/main.js` | Rendering tautan, inisialisasi scene Three.js, dan interaksi |
+Daftar tujuan saat ini memuat empat proyek: Portfolio, Website Kelas, Aplikasi Flutter, dan Website Lomba ITX.

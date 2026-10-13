@@ -1,91 +1,42 @@
 <!doctype html>
 <html lang="id">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050913">
-  <meta name="description" content="Gerbang digital Gilang Nur Maulida Faid — satu tempat untuk menjelajahi semua karya dan proyeknya.">
-  <title>Gilang's Digital Gateway</title>
-  <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050913'/%3E%3Ctext x='50' y='68' font-size='48' text-anchor='middle' fill='%235ff9e5' font-family='monospace'%3EGF%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-  <div class="loading-screen" id="loadingScreen" role="status" aria-live="polite">
-    <div class="loading-content">
-      <div class="loader-orbit" aria-hidden="true"><i></i><span></span><b></b></div>
-      <p class="loading-kicker">ESTABLISHING CONNECTION</p>
-      <h1>Opening the <em>gateway</em></h1>
-      <div class="loader-progress" aria-hidden="true"><i></i></div>
-      <p class="loading-status">MAPPING DIGITAL SPACE <span>06 SEC</span></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050913" />
+    <meta
+      name="description"
+      content="Satu ruang untuk menjelajahi semua karya, eksperimen, dan proyek digital Gilang Nur Maulida Faid."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GF Portals — Gilang's Information Portals" />
+    <meta
+      property="og:description"
+      content="Satu ruang untuk menjelajahi semua karya, eksperimen, dan proyek digital yang kubangun."
+    />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>GF Portals</title>
+  </head>
+  <body>
+    <div id="root">
+      <noscript>
+        <main>
+          <h1>GF&apos;s Information Portals</h1>
+          <p>Satu ruang untuk menjelajahi semua karya, eksperimen, dan proyek digital yang kubangun.</p>
+          <h2>Pilih tujuan</h2>
+          <ul>
+            <li><a href="https://gilangfaid.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+            <li><a href="https://11rplsterida.vercel.app/" target="_blank" rel="noopener noreferrer">Website Kelas</a></li>
+            <li><a href="https://download-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer">Aplikasi Flutter</a></li>
+            <li><a href="https://itx-2026-web-dev-coppy-paste-smk-pg.vercel.app/" target="_blank" rel="noopener noreferrer">Website Lomba ITX</a></li>
+          </ul>
+        </main>
+      </noscript>
     </div>
-  </div>
-
-  <div class="app">
-    <div class="space-backdrop" aria-hidden="true">
-      <div class="nebula nebula--one"></div>
-      <div class="nebula nebula--two"></div>
-      <div class="star-glow"></div>
-      <div class="scanlines"></div>
-    </div>
-
-    <main class="gateway" aria-labelledby="gatewayTitle">
-      <div class="gateway-meta">
-        <a class="brand" href="./" aria-label="Gilang's Digital Gateway">
-          <span class="brand-mark" aria-hidden="true">GF</span>
-          <span class="brand-copy"><strong>GILANG'S UNIVERSE</strong><small>DIGITAL WORKS / 2026</small></span>
-        </a>
-        <span class="system-status"><i></i><span id="systemStatus">GATEWAY ONLINE</span></span>
-      </div>
-
-      <section class="hero-copy">
-        <p class="eyebrow"><span></span> YOUR PORTAL TO MY WORK</p>
-        <h1 id="gatewayTitle">Gilang's<br><em>Digital Gateway.</em></h1>
-        <p class="hero-description" id="gatewayDescription">Satu ruang untuk menjelajahi semua karya, eksperimen, dan proyek digital yang kubangun.</p>
-        <p class="hero-location" id="profileLocation">PONOROGO, JAWA TIMUR <span>—</span> INDONESIA</p>
-      </section>
-
-      <section class="gateway-scene" aria-label="Gerbang galaksi 3D interaktif">
-        <div class="scene-label scene-label--top"><span class="crosshair"></span> PORTAL / 01</div>
-        <div class="scene-label scene-label--bottom">DRAG TO ROTATE <span></span></div>
-        <div class="canvas-wrap" id="canvasWrap">
-          <canvas id="sceneCanvas" aria-label="Bola gerbang galaksi 3D yang dapat diputar dengan mouse atau sentuhan"></canvas>
-          <div class="canvas-vignette" aria-hidden="true"></div>
-        </div>
-        <div class="portal-caption" aria-hidden="true"><span>INTERACTIVE SPACE</span><i></i><span>SELECT A DESTINATION</span></div>
-      </section>
-
-      <nav class="destination-nav" id="destinationNav" aria-label="Tautan ke proyek dan website">
-        <p class="destination-heading"><span>SELECT DESTINATION</span><span id="destinationCount">03 CONNECTIONS</span></p>
-        <div class="destination-list" id="destinationList"></div>
-      </nav>
-
-      <footer class="gateway-footer">
-        <span>AN OPEN DOOR TO WHAT I'VE BUILT</span>
-        <span>EST. <b>2026</b> <i aria-hidden="true">✦</i></span>
-      </footer>
-    </main>
-  </div>
-
-  <noscript>
-    <div class="no-script">
-      JavaScript perlu diaktifkan untuk animasi gerbang 3D. Kunjungi langsung:
-      <a href="https://gilangfaid.vercel.app/">Portfolio</a>,
-      <a href="https://11rplsterida.vercel.app/">website kelas</a>, atau
-      <a href="https://download-landing-page.vercel.app/">aplikasi Flutter</a>.
-    </div>
-  </noscript>
-
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script defer src="js/data.js"></script>
-  <script defer src="js/main.js"></script>
-</body>
-
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
